@@ -8,8 +8,9 @@ def press():
     email=email_var.get()
     age=age_var.get()
     gen=gen_var.get()
+    radio=radio_bt.get()
 
-    print(f'{user} is{ age},{email},{gen}')
+    print(f'{user} is{ age},{email},{gen},{radio}')
 
 name= ttk.Label(soft,text='enter your name').grid(row=0,column=0,sticky=tk.W)
 email= ttk.Label(soft,text='enter your email').grid(row=1,column=0,sticky=tk.W)
@@ -29,13 +30,13 @@ gen_var=tk.StringVar()
 gender=ttk.Combobox(soft,width=16,textvariable=gen_var)
 gender['values']=('Male','Female','other')
 gender.grid(row=3,column=1)
-button = ttk.Button(soft,text='submit',command=press).grid(row=4,column=0)
-
 
 #radio button
-user=tk.StringVar()
-rdbutton1=ttk.Radiobutton(soft,text="student",value="student",variable=user).grid(row=5,column=0)
+radio_bt=tk.StringVar()
+rdbutton1=ttk.Radiobutton(soft,text="student",value="student",variable=radio_bt).grid(row=4,column=0)
+rdbutton2=ttk.Radiobutton(soft,text="Teacher",value="Teacher",variable=radio_bt).grid(row=4,column=1)
 
-rdbutton2=ttk.Radiobutton(soft,text="Teacher",value="Teacher",variable=user).grid(row=5,column=1)
+button = ttk.Button(soft,text='submit',command=press).grid(row=5,column=0)
+
 
 soft.mainloop()
