@@ -32,4 +32,10 @@ gender.grid(row=3,column=1)
 button = ttk.Button(soft,text='submit',command=press).grid(row=4,column=0)
 
 
+#radio button
+user=tk.StringVar()
+rdbutton1=ttk.Radiobutton(soft,text="student",value="student",variable=user).grid(row=5,column=0)
+
+rdbutton2=ttk.Radiobutton(soft,text="Teacher",value="Teacher",variable=user).grid(row=5,column=1)
+
 soft.mainloop()
