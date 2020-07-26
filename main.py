@@ -9,8 +9,10 @@ def press():
     age=age_var.get()
     gen=gen_var.get()
     radio=radio_bt.get()
-
-    print(f'{user} is{ age},{email},{gen},{radio}')
+    #write data into file 
+    with open('file.text','a') as fh:
+        fh.write(f'{user},{email},{age},{radio}')
+         # print(f'{user} is{ age},{email},{gen},{radio}')
 
 name= ttk.Label(soft,text='enter your name').grid(row=0,column=0,sticky=tk.W)
 email= ttk.Label(soft,text='enter your email').grid(row=1,column=0,sticky=tk.W)
